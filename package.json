@@ -1,0 +1,19 @@
+{
+  "name": "bamazon-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "customer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estomm01/BAmazon-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/estomm01/BAmazon-/issues"
+  },
+  "homepage": "https://github.com/estomm01/BAmazon-#readme"
+}
