@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "",
+  password: "Markus1572!!",
   database: "Bamazon"
 })
 
@@ -22,3 +22,20 @@ function start(){
       console.log("ID: " + res[i].ItemID + " | " + "Product: " + res[i].ProductName + " | " + "Department: " + res[i].DepartmentName + " | " + "Price: " + res[i].Price + " | " + "QTY: " + res[i].StockQuantity);
       console.log('--------------------------------------------------------------------------------------------------')
     }
+
+    // inquirer.prompt([
+    //   type: "input",
+    //   name: "id"
+    //   message:
+
+    //   validate: function(value) {
+    //     if()
+
+    //   }else{
+    //     return false;
+    //   }
+
+    //type: "input",
+    //   name: "qty",
+        //  message: "How many would you like to purchase?",
+    ])
