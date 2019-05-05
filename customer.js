@@ -7,12 +7,17 @@ var connection = mysql.createConnection({
   port: 3306,
   user: "root",
   password: "Markus1572!!",
-  database: "Bamazon"
-})
+  database: "BamazonDB"
+});
 
+connection.connect(function(err) {
+  if (err) throw err;
+  start()
+});
 function start(){
   //prints the items for sale and their details
   connection.query('SELECT * FROM Products', function(err, res){
+
     if(err) throw err;
 
     console.log('Welcome to BAMazon')
@@ -23,19 +28,56 @@ function start(){
       console.log('--------------------------------------------------------------------------------------------------')
     }
 
-    // inquirer.prompt([
-    //   type: "input",
-    //   name: "id"
-    //   message:
+     askBuy();
 
-    //   validate: function(value) {
-    //     if()
+  });
 
-    //   }else{
-    //     return false;
-    //   }
+};
+  function askBuy(){
+    inquirer.prompt([
+     {
+      type: "input",
+      name: "id",
+      message: "what product ID would you like to purchase?",
 
-    //type: "input",
-    //   name: "qty",
-        //  message: "How many would you like to purchase?",
-    ])
+      validate: function(value) {
+         if(isNaN(value) === false){
+           return true;
+
+         }else{
+
+        return false;
+         }
+        }
+     },
+     {
+      type: "input",
+      name: "qty",
+      message: "How many would you like to purchase?",
+
+      validate: function(value) {
+         if(isNaN(value) === false){
+           return true;
+
+         }else{
+
+        return false;
+         }
+        }
+     }
+
+    ]).then(function(answer){
+      let whatToBuy = answer.id;
+      let howManyToPurchase = answer.qty;
+      //console.log(answer);
+      connection.query(select * from Products )
+    });
+  };
+
+// //   //   if enough, run
+// //   //   'update products set qty=qty-3 where id = 6'
+// //   //   else
+// //   //   display insufficent quantity
+// //   differentFunction();
+// // }
+// // function differentFunction()
