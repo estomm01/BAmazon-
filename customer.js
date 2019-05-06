@@ -69,8 +69,21 @@ function start(){
     ]).then(function(answer){
       let whatToBuy = answer.id;
       let howManyToPurchase = answer.qty;
+      let total = parseFloat((response[whatToBuy].Price)*howManyToPurchase");
       //console.log(answer);
-      connection.query(select * from Products )
+
+      if(response[whatToBuy].StockQuantity >= howManyToPurchase){
+        connection.query('Update Products SET ? Where ?, [
+          {StockQuantity: (res[whatToBuy].StockQuantity - howManyToPurchase)},
+          {itemID: answer.id}
+        ], function(err, result){
+          if(err) throw err;
+          console.log("success!");
+        };
+      }
+
+      // connection.query(select * from Products ID )
+
     });
   };
 
