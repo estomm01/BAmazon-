@@ -17,6 +17,9 @@ connection.connect(function (err) {
 
 function start() {
   inquirer.prompt([
-
+    type: "list",
+    name"doThis",
+    message: "What would you like to do?",
+    choices: ["View products for Sale", "View Low Inventory", "Add Products", "Add New Product" ]
   ])
 }
