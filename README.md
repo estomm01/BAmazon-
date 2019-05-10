@@ -14,3 +14,7 @@ The customer interface allows the user to view the current inventory of store it
 * [MySQL](https://www.mysql.com/) - The web framework used
 * [NPM MySql](https://www.npmjs.com/package/mysql/) - Dependency Management
 * [Node.js](https://nodejs.org/en/) - Used to generate RSS Feeds
+
+## Authors
+
+* **Markus Maasikas** - *Initial work* - [Estomm01](https://github.com/estomm01/BAmazon-)
