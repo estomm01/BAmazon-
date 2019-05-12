@@ -27,7 +27,13 @@ function start() {
   switch(ans.doThis){
     case "View Products for Sale": viewProducts();
     break;
-
+    case "View Low Inventory": viewLowInventory();
+    break;
+    case "Add to Inventory": addToInventory();
+    break;
+    case "Add New Product": addNewProduct();
+    break;
+    case "End Session": console.log('See Ya!');
   }
 });
 
