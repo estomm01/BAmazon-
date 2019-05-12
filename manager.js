@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 var inquirer = require('inquirer');
 
-var connection = mysql.createConnecdtion({
+var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
@@ -16,10 +16,23 @@ connection.connect(function (err) {
 });
 
 function start() {
-  inquirer.prompt([
+  inquirer.prompt([{
     type: "list",
-    name"doThis",
+    name: "doThis",
     message: "What would you like to do?",
-    choices: ["View products for Sale", "View Low Inventory", "Add Products", "Add New Product" ]
-  ])
-}
+    choices: ["View Products for Sale", "View Low Inventory", "Add Products", "Add New Product" ]
+
+}]).then(function(ans){
+  console.log(ans);
+  switch(ans.doThis){
+    case "View Products for Sale": viewProducts();
+    break;
+
+  }
+});
+
+};
+
+function viewProducts(){
+  console.log("list")
+};
